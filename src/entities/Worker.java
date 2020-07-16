@@ -71,8 +71,8 @@ public class Worker {
 	public void removeContract(HourContract contract) {
 		contracts.remove(contract);
 	}
-	
-	public Double income(int year, int month) { //Comparar as datas e somar os ganhos + o salario base   
+
+	public Double income(int year, int month) { // Comparar as datas e somar os ganhos + o salario base
 		double sum = baseSalary;
 		Calendar cal = Calendar.getInstance();
 		for (HourContract c : contracts) {
@@ -80,9 +80,9 @@ public class Worker {
 			int c_year = cal.get(Calendar.YEAR);
 			int c_month = 1 + cal.get(Calendar.MONTH);
 			if (year == c_year && month == c_month) {
-					sum += c.totalValue();
+				sum += c.totalValue();
 			}
-		}   
+		}
 		return sum;
 	}
 }
